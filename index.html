@@ -89,7 +89,7 @@
                         setTimeout(() => this.buttons[element].isActive = false, this.lvl * this.time);
                         this.time++; 
                     });
-                    setTimeout(() => this.inGame = true, this.lvl * this.time);
+                    setTimeout(() => this.inGame = true, this.lvl * (this.time - 1));
                 },
                 Choose(color) {
                     this.try.push(color);
