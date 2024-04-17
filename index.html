@@ -73,8 +73,8 @@
                     this.root.push(this.colors[Math.floor(Math.random() * 4)]);
                     this.startBtn = 'Заново';
                     this.lost = false;
-                    this.inGame = true;
                     this.Game();
+                    this.round = 1;
                 },
                 Game() {
                     this.root.forEach(element => {
@@ -88,6 +88,7 @@
                         setTimeout(() => this.buttons[element].isActive = false, this.lvl * this.time);
                         this.time++; 
                     });
+                    this.inGame = true;
                 },
                 Choose(color) {
                     this.try.push(color);
@@ -102,7 +103,6 @@
                 End() {
                     this.root = [];
                     this.try = [];
-                    this.round = 1;
                     this.time = 1;
                     this.lost = true;
                     this.startBtn = 'Старт';
